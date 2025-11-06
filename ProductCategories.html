@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    .products-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .products-section h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #2563eb;
+      margin-bottom: 30px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit:contain;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px 15px 15px;
+    }
+
+    .add-to-cart {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #1e40af;
+    }
+
+    .like-btn {
+      background: #fff;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .like-btn:hover {
+      background: #2563eb;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="products-section">
+    <h1>Our Products</h1>
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ada/rtx-4090/geforce-ada-4090-web-og-1200x630.jpg" alt="Gaming GPU">
+        <div class="product-info">
+          <h3 class="product-title">NVIDIA RTX 4090 GPU</h3>
+          <p class="product-price">₹1,89,999</p>
+        </div>
+        <div class="btn-container">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="like-btn">♡</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/DJI_Phantom_4Pro_04-2017_img3_in_flight.jpg" alt="Drone">
+        <div class="product-info">
+          <h3 class="product-title">DJI Phantom 4 Pro Drone</h3>
+          <p class="product-price">₹1,24,999</p>
+        </div>
+        <div class="btn-container">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="like-btn">♡</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600" alt="Raspberry Pi">
+        <div class="product-info">
+          <h3 class="product-title">Raspberry Pi 5 (8GB)</h3>
+          <p class="product-price">₹8,999</p>
+        </div>
+        <div class="btn-container">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="like-btn">♡</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/2505503-ryzen-9-7900x-og.jpg" alt="CPU">
+        <div class="product-info">
+          <h3 class="product-title">AMD Ryzen 9 7950X</h3>
+          <p class="product-price">₹54,999</p>
+        </div>
+        <div class="btn-container">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="like-btn">♡</button>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="headset.jpg" alt="Headset">
+        <div class="product-info">
+          <h3 class="product-title">SteelSeries Arctis Pro</h3>
+          <p class="product-price">₹22,499</p>
+        </div>
+        <div class="btn-container">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="like-btn">♡</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gaming & Consoles - E-Commerce Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Base reset */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      color: #2d3436;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: white;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in;
+    }
+    .products-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+      cursor: pointer;
+      color: #2d3436;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #f0f0f0;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-image {
+      transform: scale(1.1);
+    }
+    .product-info {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #2d3436;
+    }
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #00b894;
+      margin-bottom: 12px;
+    }
+    .product-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+    .product-rating i {
+      margin-right: 3px;
+    }
+    .rating-text {
+      margin-left: 8px;
+      font-size: 0.9rem;
+      color: #636e72;
+    }
+    .product-description {
+      font-size: 0.9rem;
+      color: #636e72;
+      line-height: 1.4;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+    .add-to-cart-btn {
+      background: linear-gradient(45deg, #0984e3, #74b9ff);
+      border: none;
+      border-radius: 50px;
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(74, 185, 255, 0.5);
+    }
+    .add-to-cart-btn:hover {
+      background: linear-gradient(45deg, #74b9ff, #0984e3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(116, 185, 255, 0.7);
+    }
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #e17055;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 15px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+      .product-image {
+        height: 160px;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Gaming & Consoles</h1>
+  <div class="products-grid">
+    <div class="product-card" tabindex="0" aria-label="PlayStation 5 Console">
+      <div class="badge">Best Seller</div>
+      <img
+        src="https://www.digitaltrends.com/wp-content/uploads/2023/11/ps5-on-table.jpg?resize=1200%2C720&p=1"
+        alt="PlayStation 5 console in white color with vertical stand and controller"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">PlayStation 5</div>
+        <div class="product-price">$499.99</div>
+        <div class="product-rating" aria-label="4.9 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.9/5)</span>
+        </div>
+        <div class="product-description">
+          Next-gen gaming console with lightning-fast SSD, 4K gaming, and haptic feedback DualSense controller.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add PlayStation 5 to cart" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Xbox Series X">
+      <img
+        src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=400&q=80"
+        alt="Xbox Series X console in black with ventilation grills and Xbox logo"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Xbox Series X</div>
+        <div class="product-price">$499.99</div>
+        <div class="product-rating" aria-label="4.8 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.8/5)</span>
+        </div>
+        <div class="product-description">
+          Powerful console with 12GB GDDR6 RAM, ray tracing, and Quick Resume for seamless multitasking.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Xbox Series X to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Nintendo Switch OLED">
+      <div class="badge">New</div>
+      <img
+        src="https://www.cnet.com/a/img/resize/6fa4611b51de29878e17e9d52efbb9fa4c154470/hub/2021/10/05/83c35cd5-4664-410d-b15a-5c5d706ba3e7/switch-oled-tabletop.jpg?auto=webp&fit=crop&height=675&width=1200"
+        alt="Nintendo Switch OLED in red and blue with OLED screen and joy-cons"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Nintendo Switch OLED</div>
+        <div class="product-price">$349.99</div>
+        <div class="product-rating" aria-label="4.7 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.7/5)</span>
+        </div>
+        <div class="product-description">
+          Portable console with 7-inch OLED screen, longer battery life, and vibrant handheld gaming.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Nintendo Switch OLED to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="DualSense Wireless Controller">
+      <img
+        src="https://comicbook.com/wp-content/uploads/sites/4/2021/08/853d71ff-fe00-4a00-9e4a-e3b889d0d0ba.jpg?w=1024"
+        alt="DualSense wireless controller for PS5 with adaptive triggers and charging dock"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">DualSense Wireless Controller</div>
+        <div class="product-price">$79.99</div>
+        <div class="product-rating" aria-label="4.6 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.6/5)</span>
+        </div>
+        <div class="product-description">
+          Haptic feedback controller with adaptive triggers, built-in microphone, and charging dock for PS5.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add DualSense Wireless Controller to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Logitech G305 Wireless Mouse">
+      <img
+        src="https://www.thevaluestore.in/image/cache/catalog/2024/Logitech/Mouse/g304-black-2-1000x1000.jpg"
+        alt="Logitech G305 wireless gaming mouse in black with scroll wheel and RGB lighting"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Logitech G305 Wireless Mouse</div>
+        <div class="product-price">$49.99</div>
+        <div class="product-rating" aria-label="4.5 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.5/5)</span>
+        </div>
+        <div class="product-description">
+          Lightweight wireless gaming mouse with 12-month battery life, 61g weight, and HERO sensor.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Logitech G305 Wireless Mouse to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Razer DeathAdder V2 Pro">
+      <div class="badge">Popular</div>
+      <img
+        src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=400&q=80"
+        alt="Razer DeathAdder V2 Pro mouse with ergonomic grip and green chassis"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Razer DeathAdder V2 Pro</div>
+        <div class="product-price">$129.99</div>
+        <div class="product-rating" aria-label="4.4 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="far fa-star" aria-hidden="true"></i>
+          <span class="rating-text">(4.4/5)</span>
+        </div>
+        <div class="product-description">
+          Wireless gaming mouse with Focus+ optical sensor, 20K DPI, and 70g lightweight design.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Razer DeathAdder V2 Pro to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="SteelSeries Apex Pro Keyboard">
+      <img
+        src="https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&fit=crop&w=400&q=80"
+        alt="SteelSeries Apex Pro mechanical gaming keyboard with RGB lighting and aluminum frame"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">SteelSeries Apex Pro</div>
+        <div class="product-price">$299.99</div>
+        <div class="product-rating" aria-label="4.7 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.7/5)</span>
+        </div>
+        <div class="product-description">
+          Premium mechanical keyboard with OmniPoint switches, OLED display, and magnetic wrist rest.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add SteelSeries Apex Pro to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Microsoft Xbox Wireless Controller">
+      <div class="badge">Affordable</div>
+      <img
+        src="https://images.unsplash.com/photo-1591957912783-3e50470d6373?auto=format&fit=crop&w=400&q=80"
+        alt="Microsoft Xbox wireless controller with D-pad and ergonomic design"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Microsoft Xbox Wireless Controller</div>
+        <div class="product-price">$59.99</div>
+        <div class="product-rating" aria-label="4.3 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <i class="far fa-star" aria-hidden="true"></i>
+          <span class="rating-text">(4.3/5)</span>
+        </div>
+        <div class="product-description">
+          Reliable wireless controller with built-in battery, share button, and seamless Xbox integration.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Microsoft Xbox Wireless Controller to cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+</content>
+</create_file>

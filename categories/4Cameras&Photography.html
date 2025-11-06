@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cameras & Photography - E-Commerce Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Base reset */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      color: #2d3436;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: white;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in;
+    }
+    .products-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+      cursor: pointer;
+      color: #2d3436;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #f0f0f0;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-image {
+      transform: scale(1.1);
+    }
+    .product-info {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #2d3436;
+    }
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #00b894;
+      margin-bottom: 12px;
+    }
+    .product-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+    .product-rating i {
+      margin-right: 3px;
+    }
+    .rating-text {
+      margin-left: 8px;
+      font-size: 0.9rem;
+      color: #636e72;
+    }
+    .product-description {
+      font-size: 0.9rem;
+      color: #636e72;
+      line-height: 1.4;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+    .add-to-cart-btn {
+      background: linear-gradient(45deg, #0984e3, #74b9ff);
+      border: none;
+      border-radius: 50px;
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(74, 185, 255, 0.5);
+    }
+    .add-to-cart-btn:hover {
+      background: linear-gradient(45deg, #74b9ff, #0984e3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(116, 185, 255, 0.7);
+    }
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #e17055;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 15px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+      .product-image {
+        height: 160px;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Cameras & Photography</h1>
+  <div class="products-grid">
+    <div class="product-card" tabindex="0" aria-label="Canon EOS 90D DSLR Camera">
+      <div class="badge">Professional</div>
+      <img
+        src="https://i.rtings.com/assets/products/PewlEt8m/canon-eos-90d/design-medium.jpg?format=auto"
+        alt="Canon EOS 90D DSLR camera with black body and large lens attached"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Canon EOS 90D</div>
+        <div class="product-price">$1,199.00</div>
+        <div class="product-rating" aria-label="4.8 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.8/5)</span>
+        </div>
+        <div class="product-description">
+          Full-frame DSLR with 32.5MP sensor, 4K video, and advanced autofocus for photographers.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Canon EOS 90D to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Sony Alpha A7 IV Mirrorless Camera">
+      <img
+        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80"
+        alt="Sony Alpha A7 IV mirrorless camera in black with EVF viewfinder"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Sony Alpha A7 IV</div>
+        <div class="product-price">$2,399.00</div>
+        <div class="product-rating" aria-label="4.7 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.7/5)</span>
+        </div>
+        <div class="product-description">
+          Full-frame mirrorless with 33MP sensor, 4K60p video, and exceptional 4D focus system.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Sony Alpha A7 IV to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Nikon Z6 II Mirrorless Camera">
+      <div class="badge">New</div>
+      <img
+        src="https://www.dpreview.com/files/p/articles/5602333549/Nikon_Z6_II_Z7_II_hands-on-018.jpeg"
+        alt="Nikon Z6 II mirrorless camera with black body and Z-mount lens"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Nikon Z6 II</div>
+        <div class="product-price">$1,999.00</div>
+        <div class="product-rating" aria-label="4.6 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.6/5)</span>
+        </div>
+        <div class="product-description">
+          Versatile mirrorless camera with dual EXPEED 6 processors and superb video capabilities.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Nikon Z6 II to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="GoPro HERO9 Silver Action Camera">
+      <img
+        src="https://cdn.mos.cms.futurecdn.net/GWowB6iDePMTyK2UzMSAJe.jpg"
+        alt="GoPro HERO9 Silver action camera with waterproof housing and touch screen"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">GoPro HERO9 Silver</div>
+        <div class="product-price">$299.99</div>
+        <div class="product-rating" aria-label="4.5 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.5/5)</span>
+        </div>
+        <div class="product-description">
+          Rugged action camera with 23.6MP sensor, 5K video, and live streaming in waterproof enclosure.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add GoPro HERO9 Silver to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Canon EF 50mm f/1.2L USM Lens">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/579bbd35b3db2bfbd63eb3ae/dadc4313-8b2a-4ac4-af59-3a7df3b40625/canon50mmf-1.2LUSMlens.jpg"
+        alt="Canon EF 50mm f/1.2L USM lens in black with gold ring"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Canon EF 50mm f/1.2L USM</div>
+        <div class="product-price">$1,499.00</div>
+        <div class="product-rating" aria-label="4.9 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <span class="rating-text">(4.9/5)</span>
+        </div>
+        <div class="product-description">
+          Professional standard prime lens with fast f/1.2 aperture for stunning portraits and low-light photography.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Canon EF 50mm f/1.2L USM to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Vinten Vision Tripod">
+      <div class="badge">Sale</div>
+      <img
+        src="https://media.exapro.com/product/2024/06/P240620076/52c93f38e75ae1019a868712466e98ad/vinten-vision-3-p240620076_4.jpg"
+        alt="Vinten Vision tripod with fluid head and professional camera mount"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Vinten Vision Tripod</div>
+        <div class="product-price">$1,299.00</div>
+        <div class="product-rating" aria-label="4.4 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="far fa-star" aria-hidden="true"></i>
+          <span class="rating-text">(4.4/5)</span>
+        </div>
+        <div class="product-description">
+          Durable tripod system with fluid head for smooth panning and precise control during shoots.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Vinten Vision Tripod to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="DJI Mini 3 Drone">
+      <img
+        src="https://i.ytimg.com/vi/6VbOozPmbr4/maxresdefault.jpg"
+        alt="DJI Mini 3 quadcopter drone with folded arms for portability"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">DJI Mini 3</div>
+        <div class="product-price">$669.00</div>
+        <div class="product-rating" aria-label="4.6 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <span class="rating-text">(4.6/5)</span>
+        </div>
+        <div class="product-description">
+          Compact drone with 4K camera, intelligent flight modes, and extended flight time for aerial photography.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add DJI Mini 3 to cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" tabindex="0" aria-label="Sony Alpha a6100">
+      <div class="badge">Popular</div>
+      <img
+        src="https://www.digitaltrends.com/wp-content/uploads/2019/10/sony-a6100-review-de-3.jpg?fit=1500%2C1000&p=1"
+        alt="Sony Alpha a6100 mirrorless camera in white with lens"
+        class="product-image"
+      />
+      <div class="product-info">
+        <div class="product-name">Sony Alpha a6100</div>
+        <div class="product-price">$798.00</div>
+        <div class="product-rating" aria-label="4.3 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+          <i class="far fa-star" aria-hidden="true"></i>
+          <span class="rating-text">(4.3/5)</span>
+        </div>
+        <div class="product-description">
+          APS-C mirrorless camera with 24.2MP sensor for vloggers and content creators.
+        </div>
+        <button class="add-to-cart-btn" aria-label="Add Sony Alpha a6100 to cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+</content>
+</create_file>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Upper Icon for About User</title>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Include TailwindCSS for responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="0ruf.css">
+</head>
+<body>
+    <!-- Icon in top-left corner -->
+    <div class="icon-container" id="userIcon">
+        <div class="icon"> account
+            <i class="fas fa-user-circle" aria-hidden="true"></i>
+        </div>
+        <!-- Hidden user info popup -->
+        <div class="user-info" id="userInfo">
+            <button class="close-btn" onclick="closeInfo()">&times;</button>
+            <h3>About the User</h3>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john@example.com</p>
+            <p><strong>Bio:</strong> Passionate developer with a love for creating intuitive user interfaces and exploring new technologies.</p>
+            <div class="flex justify-around mt-4">
+                <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main content example -->
+    <div class="flex items-center justify-center h-full">
+        <h1 class="text-white text-4xl font-bold drop-shadow-lg">Welcome to My Website</h1>
+    </div>
+
+    <script>
+        // JavaScript for interactivity
+        const userIcon = document.getElementById('userIcon');
+        const userInfo = document.getElementById('userInfo');
+
+        // Toggle user info on icon click
+        userIcon.addEventListener('click', () => {
+            if (userInfo.style.display === 'block') {
+                closeInfo();
+            } else {
+                userInfo.style.display = 'block';
+            }
+        });
+
+        function closeInfo() {
+            userInfo.style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!userIcon.contains(e.target) && userInfo.style.display === 'block') {
+                closeInfo();
+            }
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>

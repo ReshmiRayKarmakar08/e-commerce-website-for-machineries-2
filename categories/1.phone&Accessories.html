@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphones & Accessories - E-Commerce Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="1.phone&Accessories.css">
+</head>
+<body>
+    <button class="filter-button" onclick="toggleFilter()"><i class="fas fa-filter"></i> Filter</button>
+    <div class="filter-sidebar" id="filterSidebar">
+        <h3 class="filter-title">Filters</h3>
+        <div>Price: <input type="range" min="0" max="2000" value="1000" onchange="filterProducts(this.value)"></div>
+        <div>Brand: 
+            <select>
+                <option>All</option>
+                <option>Samsung</option>
+                <option>Apple</option>
+                <option>Google</option>
+            </select>
+        </div>
+    </div>
+    <div class="products-container">
+        <h1 class="section-title">Smartphones & Accessories</h1>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fcbe620d-b0d6-4de4-9027-69163e7f7fba.png" alt="Sleek smartphone with advanced camera system and titanium frame, displaying latest model iPhone 14 Pro in space gray color" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">iPhone 14 Pro</div>
+                    <div class="product-price">$999.00</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <span class="rating-text">(4.7/5)</span>
+                    </div>
+                    <div class="product-description">Experience innovation with a dynamic island display, A16 Bionic chip, and professional camera capabilities for stunning photos and videos.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="product-badge">Best Seller</span>
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/28b6030d-defe-4df7-a126-b572b3bc9fc8.png" alt="Modern smartphone with flat screen and versatile camera setup, showcasing Samsung Galaxy S23 in vibrant purple hue" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Samsung Galaxy S23</div>
+                    <div class="product-price">$799.00</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="rating-text">(4.8/5)</span>
+                    </div>
+                    <div class="product-description">Power through your day with Snapdragon 8 Gen 2, stunning AMOLED display, and an AI-enhanced camera system.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c0a59cdb-fd09-4550-be42-8140cbcb7c66.png" alt="Protective clear phone case with precise cutouts for buttons and camera, made from durable polycarbonate material" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Clear Protective Case</div>
+                    <div class="product-price">$19.99</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="rating-text">(4.6/5)</span>
+                    </div>
+                    <div class="product-description">Shield your smartphone with impact-resistant clear case that preserves the original look while providing strong protection.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7fde0c76-8118-42fa-8b19-508be9d21729.png" alt="Sleek wireless charging pad with LED indicator lights and rapid charging technology for compatible devices" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Fast Wireless Charger</div>
+                    <div class="product-price">$49.99</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <span class="rating-text">(4.5/5)</span>
+                    </div>
+                    <div class="product-description">Charge your device effortlessly with 15W fast wireless charging, compatible with Qi standards and overheat protection.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a51ebc2-b35c-45bd-89dc-2c73637cd0ef.png" alt="Ultra-thin tempered glass screen protector with bubble-free alignment tool for scratch and impact resistance" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Tempered Glass Screen Protector</div>
+                    <div class="product-price">$3535.7557</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="rating-text">(4.9/5)</span>
+                    </div>
+                    <div class="product-description">Preserve your screen with holographic tempered glass that reduces glare, fingerprints, and provides military-grade durability.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ff13d7c8-e541-4f4b-bb33-6f07bec11c55.png" alt="Compact true wireless earbuds with charging case, touch controls, and crystal clear sound quality" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Wireless Earbuds</div>
+                    <div class="product-price">$149.99</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <span class="rating-text">(4.4/5)</span>
+                    </div>
+                    <div class="product-description">Enjoy freedom with active noise cancellation, 8-hour battery life, and seamless connectivity for calls and music.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c85d6ae5-41f5-4bb9-9aea-63602c23a5ca.png" alt="Expandable phone grip accessory with adhesive base for hands-free holding and phone stand functionality" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Pop Socket Grip</div>
+                    <div class="product-price">$9.99</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="rating-text">(4.7/5)</span>
+                    </div>
+                    <div class="product-description">Secure your phone with ease using this stylish, collapsible grip that doubles as a ring light diffuser and phone stand.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a6955589-77e6-4e28-b6fc-a7525f695a48.png" alt="Durable braided USB-C cable with reinforced connectors for fast data transfer and charging up to 65W" class="product-image" />
+                <div class="product-info">
+                    <div class="product-name">Braided Charging Cable (USB-C)</div>
+                    <div class="product-price">$14.99</div>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <span class="rating-text">(4.5/5)</span>
+                    </div>
+                    <div class="product-description">Stay connected with a tangle-free, nylon-braided cable designed for premium performance and long-lasting reliability.</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleFilter() {
+            document.getElementById('filterSidebar').classList.toggle('active');
+        }
+        function filterProducts(price) {
+            console.log('Filtering products by price: $' + price);
+        }
+    </script>
+</body>
+</html>
+</content>
+</create_file>

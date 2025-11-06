@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - IoT Electronics & Components</title>
+    <link rel="stylesheet" href="Techstore.css">
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo" onclick="showPage('home')">TechStore</a>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for Arduino, IoT modules, sensors...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <div class="header-icons">
+                <button class="icon-btn" onclick="showPage('wishlist')">
+                    ❤
+                    <span class="cart-count" id="wishlist-count">0</span>
+                </button>
+                <button class="icon-btn" onclick="showPage('cart')">
+                    🛒
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="icon-btn" onclick="showPage('profile')">👤 Account</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-item"><a href="">Home</a></div>
+            <div class="nav-item"><a href="ProductCategories.html">Products</a></div>
+            <div class="nav-item"><a href="categories/1.Categories.html">Categories</a></div>
+            <div class="nav-item"><a href="Contact.html">Contact</a></div>
+            <div class="nav-item"><a href="AboutUS.html">About</a></div>
+        </div>
+    </nav>
+
+    <!-- Homepage -->
+    <div id="home" class="page active">
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>IoT Revolution Starts Here</h1>
+                <p>Discover cutting-edge Arduino, IoT modules, and robotics kits with up to 40% OFF</p>
+                <a href="#" class="cta-btn" onclick="showPage('products')">Shop Now</a>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <!-- Categories Section -->
+            <section class="section">
+                <h2 class="section-title">Product Categories</h2>
+                <div class="categories-grid">
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">🔧</div>
+                        <div class="category-name">Arduino Kits</div>
+                        <div class="category-count">25 Products</div>
+                    </a>
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">📡</div>
+                        <div class="category-name">IoT Modules</div>
+                        <div class="category-count">42 Products</div>
+                    </a>
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">🤖</div>
+                        <div class="category-name">Robotics</div>
+                        <div class="category-count">18 Products</div>
+                    </a>
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">📶</div>
+                        <div class="category-name">Wireless Kits</div>
+                        <div class="category-count">31 Products</div>
+                    </a>
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">🎯</div>
+                        <div class="category-name">Sensors</div>
+                        <div class="category-count">67 Products</div>
+                    </a>
+                    <a href="#" class="category-card" onclick="showPage('products')">
+                        <div class="category-icon">💻</div>
+                        <div class="category-name">Development Boards</div>
+                        <div class="category-count">29 Products</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="section">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <button class="wishlist-btn" onclick="toggleWishlist(1)">❤️</button>
+                        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=300&h=200&fit=crop"
+                            alt="Arduino Uno R3" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Arduino Uno R3 Development Board</h3>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span>(128 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹899</span>
+                                <span class="original-price">₹1,200</span>
+                            </div>
+                            <button class="add-to-cart"
+                                onclick="addToCart(1, 'Arduino Uno R3 Development Board', 899)">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <button class="wishlist-btn" onclick="toggleWishlist(2)">❤️</button>
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop"
+                            alt="ESP32 Module" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">ESP32 WiFi Bluetooth Module</h3>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span>(89 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹649</span>
+                                <span class="original-price">₹799</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(2, 'ESP32 WiFi Bluetooth Module', 649)">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <button class="wishlist-btn" onclick="toggleWishlist(3)">❤️</button>
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=200&fit=crop"
+                            alt="Raspberry Pi 4" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Raspberry Pi 4 Model B 4GB</h3>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span>(256 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹4,999</span>
+                                <span class="original-price">₹5,999</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(3, 'Raspberry Pi 4 Model B 4GB', 4999)">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <button class="wishlist-btn" onclick="toggleWishlist(4)">❤️</button>
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=200&fit=crop"
+                            alt="Robot Car Kit" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Smart Robot Car Kit</h3>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span>(45 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹2,899</span>
+                                <span class="original-price">₹3,499</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(4, 'Smart Robot Car Kit', 2899)">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Products Listing Page -->
+    <div id="products" class="page">
+        <div class="main-content">
+            <div class="products-header">
+                <h1>All Products</h1>
+                <div class="view-toggle">
+                    <button class="view-btn active">Grid</button>
+                    <button class="view-btn">List</button>
+                </div>
+            </div>
+
+            <!-- Filters Sidebar -->
+            <div style="display: flex; gap: 2rem;">
+                <aside
+                    style="width: 250px; background: white; padding: 1.5rem; border-radius: 8px; height: fit-content;">
+                    <h3>Filters</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4>Category</h4>
+                        <label><input type="checkbox"> Arduino Kits</label><br>
+                        <label><input type="checkbox"> IoT Modules</label><br>
+                        <label><input type="checkbox"> Robotics</label><br>
+                        <label><input type="checkbox"> Sensors</label><br>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4>Price Range</h4>
+                        <label><input type="radio" name="price"> Under ₹500</label><br>
+                        <label><input type="radio" name="price"> ₹500 - ₹1000</label><br>
+                        <label><input type="radio" name="price"> ₹1000 - ₹3000</label><br>
+                        <label><input type="radio" name="price"> Above ₹3000</label><br>
+                    </div>
+                    <div>
+                        <label><input type="checkbox"> In Stock Only</label>
+                    </div>
+                </aside>
+
+                <div style="flex: 1;">
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <button class="wishlist-btn" onclick="toggleWishlist(5)">❤️</button>
+                            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop"
+                                alt="Ultrasonic Sensor" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-title">Ultrasonic Distance Sensor HC-SR04</h3>
+                                <div class="product-rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span>(67 reviews)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹199</span>
+                                    <span class="original-price">₹299</span>
+                                </div>
+                                <button class="add-to-cart"
+                                    onclick="addToCart(5, 'Ultrasonic Distance Sensor HC-SR04', 199)">Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <button class="wishlist-btn" onclick="toggleWishlist(6)">❤️</button>
+                            <img src="https://images.unsplash.com/photo-1581092786450-7a7c9f4b9e7b?w=300&h=200&fit=crop"
+                                alt="LoRa Module" class="product-image">
+                            <div class="product-info">
+                                <h3 class="product-title">LoRa Wireless Communication Module</h3>
+                                <div class="product-rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span>(34 reviews)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹1,299</span>
+                                    <span class="original-price">₹1,599</span>
+                                </div>
+                                <button class="add-to-cart"
+                                    onclick="addToCart(6, 'LoRa Wireless Communication Module', 1299)">Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="product-detail" class="page">
+        <div class="main-content">
+            <div class="product-detail">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&h=400&fit=crop"
+                        alt="Product" class="main-image" id="main-image">
+                    <div class="thumbnail-gallery">
+                        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=80&h=80&fit=crop"
+                            alt="Thumb 1" class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop"
+                            alt="Thumb 2" class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=80&h=80&fit=crop"
+                            alt="Thumb 3" class="thumbnail">
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1>Arduino Uno R3 Development Board</h1>
+                    <div class="product-rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>(128 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price" style="font-size: 2rem;">₹899</span>
+                        <span class="original-price" style="font-size: 1.2rem;">₹1,200</span>
+                    </div>
+                    <p style="margin: 1rem 0; color: #059669; font-weight: bold;">✅ In Stock</p
